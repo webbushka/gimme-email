@@ -11,14 +11,14 @@ const currentDate = formatDate(new Date())
 const conf = new Configstore('gimmemail')
 
 const argv = yarg
-  .command('gimmemail [username] [domain]', 'returns email with date')
+  .command('[username] [domain]', 'returns email with date')
   .option('set-username', {
     alias: 'u',
-    describe: 'username to use (ex. jsnow)',
+    describe: 'sets default username to use when not supplied (ex. jsnow)',
   })
   .option('set-domain', {
     alias: 'd',
-    describe: 'domain to use (ex. targaryen.com)',
+    describe: 'sets default domain to use when not supplied (ex. targaryen.com)',
   }).argv
 
 const { setUsername, setDomain } = argv

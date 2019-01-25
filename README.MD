@@ -11,10 +11,10 @@ A simple CLI tool that copies an email address with versioned date hash into you
 `gimmemail --help`
 
 ```bash
-index.js [command]
+gimmemail [command]
 
 Commands:
-  index.js [username] [domain]  returns email with date
+  gimmemail [username] [domain]  returns email with date
 
 Options:
   --help              Show help                                        [boolean]

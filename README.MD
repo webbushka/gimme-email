@@ -4,7 +4,7 @@ A simple CLI tool that copies an email address with versioned date hash into you
 
 ## Install
 
-`npm i -G gimmemail`
+`npm i -g gimmemail`
 
 ## Usage
 

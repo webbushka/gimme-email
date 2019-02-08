@@ -3,11 +3,11 @@ const yarg = require('yargs')
 const Configstore = require('configstore')
 const chalk = require('chalk')
 const clipboardy = require('clipboardy')
+const format = require('date-fns/format')
 
 const { log } = console
-const formatDate = date => `${date.getYear()}${date.getMonth()}${date.getDay()}`
 
-const currentDate = formatDate(new Date())
+const currentDate = format(new Date(), 'YYYYMMDD')
 const conf = new Configstore('gimmemail')
 
 const argv = yarg

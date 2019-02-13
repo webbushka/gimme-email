@@ -19,9 +19,14 @@ const argv = yarg
   .option('set-domain', {
     alias: 'd',
     describe: 'sets default domain to use when not supplied (ex. targaryen.com)',
+  })
+  .option('last', {
+    alias: 'l',
+    describe: 'gets the last used email address',
+    boolean: true,
   }).argv
 
-const { setUsername, setDomain } = argv
+const { setUsername, setDomain, last } = argv
 
 if (setUsername) conf.set('username', setUsername)
 if (setDomain) conf.set('domain', setDomain)
@@ -42,11 +47,13 @@ if (!domain) {
   return log(chalk.red('You must supply a domain or set a default. Use --help for more information'))
 }
 
-if (storedDate !== currentDate) {
-  conf.set('date', currentDate)
-  conf.set('version', 1)
-} else {
-  conf.set('version', version + 1)
+if (!last || !storedDate) {
+  if (storedDate !== currentDate) {
+    conf.set('date', currentDate)
+    conf.set('version', 1)
+  } else {
+    conf.set('version', version + 1)
+  }
 }
 
 const date = conf.get('date')

@@ -22,4 +22,5 @@ Options:
   --set-username, -u  sets default username to use when not supplied (ex. jsnow)
   --set-domain, -d    sets default domain to use when not supplied (ex.
                       targaryen.com)
+  --last, -l          gets the last used email address                 [boolean]
 ```
